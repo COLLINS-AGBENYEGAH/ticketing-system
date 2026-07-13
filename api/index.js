@@ -120,7 +120,7 @@ Category: ${category}
 Our support team will review it and update you shortly.
 
 Track your ticket:
-${trackUrl}
+https://ticketing-system-three-omega.vercel.app/index.html
 
 Thank you,
 Support Team`;
