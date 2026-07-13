@@ -312,7 +312,7 @@ app.post("/api/tickets/:id/comments", requireAuth, async (req, res) => {
   if (ticket.email) {
     const baseUrl = process.env.BASE_URL || `http://localhost:${process.env.PORT || 3000}`;
     const trackUrl = `${baseUrl}/api/tickets/track/${ticket.ticket_code}`;
-    const text = `Hello ${ticket.student_name},\n\nYour ticket ${ticket.ticket_code} has a new response from ${managerName}:\n\n${message}\n\nYou can view the ticket here: https://ticketing-system-three-omega.vercel.app/index.html\n\nThank you,\nSupport Team`;
+    const text = `Hello ${ticket.student_name},\n\nYour ticket ${ticket.ticket_code} has a new response from ${managerName}:\n\n${message}\n\nYou can view the ticket here: <a href="https://ticketing-system-three-omega.vercel.app/index.html"</a>\n\nThank you,\nSupport Team`;
     const html = `<p>Hello ${ticket.student_name},</p>
 <p>Your ticket <strong>${ticket.ticket_code}</strong> has a new response from <strong>${managerName}</strong>:</p>
 <p>${message.replace(/\n/g, '<br>')}</p>
