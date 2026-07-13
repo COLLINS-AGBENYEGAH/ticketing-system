@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Staff Dashboard</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="brand"><span class="dot"></span> UGC Help Desk &mdash; Staff Dashboard</div>
+  <div class="nav-links">
+    <span id="welcome-name" style="margin-right:10px;"></span>
+    <a href="#" id="logout-link">Log Out</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="dash-header">
+    <h2 style="margin:0; color:var(--navy);">All Tickets</h2>
+    <button id="new-ticket-btn" class="btn btn-gold btn-sm">+ New Ticket</button>
+  </div>
+
+  <div class="stat-grid" id="stat-grid">
+    <div class="stat-card"><div class="num" id="stat-open">-</div><div class="label">Open</div></div>
+    <div class="stat-card"><div class="num" id="stat-progress">-</div><div class="label">In Progress</div></div>
+    <div class="stat-card"><div class="num" id="stat-resolved">-</div><div class="label">Resolved</div></div>
+    <div class="stat-card"><div class="num" id="stat-closed">-</div><div class="label">Closed</div></div>
+  </div>
+
+  <div class="filters">
+    <input type="text" id="filter-q" placeholder="Search name, ID, code, description..." style="min-width:240px;" />
+    <select id="filter-status">
+      <option value="">All Statuses</option>
+      <option value="Open">Open</option>
+      <option value="In Progress">In Progress</option>
+      <option value="Resolved">Resolved</option>
+      <option value="Closed">Closed</option>
+    </select>
+    <select id="filter-category">
+      <option value="">All Categories</option>
+      <option value="Academic/Registrar">Academic/Registrar</option>
+      <option value="IT/Computer Lab">IT/Computer Lab</option>
+      <option value="Facilities/Maintenance">Facilities/Maintenance</option>
+      <option value="Hostel/Accommodation">Hostel/Accommodation</option>
+      <option value="Finance/Fees">Finance/Fees</option>
+      <option value="Administration">Administration</option>
+      <option value="Other">Other</option>
+    </select>
+    <select id="filter-priority">
+      <option value="">All Priorities</option>
+      <option value="Low">Low</option>
+      <option value="Medium">Medium</option>
+      <option value="High">High</option>
+      <option value="Urgent">Urgent</option>
+    </select>
+    <button id="refresh-btn" class="btn btn-outline btn-sm">Refresh</button>
+  </div>
+
+  <div id="table-wrap">
+    <table id="tickets-table">
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Student</th>
+          <th>Category</th>
+          <th>Priority</th>
+          <th>Status</th>
+          <th>Submitted</th>
+        </tr>
+      </thead>
+      <tbody id="tickets-tbody"></tbody>
+    </table>
+    <div id="empty-state" class="empty-state hidden">No tickets match your filters.</div>
+  </div>
+</div>
+
+<!-- Ticket detail modal -->
+<div id="modal-overlay" class="modal-overlay hidden">
+  <div class="modal">
+    <button class="modal-close" id="modal-close">&times;</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>

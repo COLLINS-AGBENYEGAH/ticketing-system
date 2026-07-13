@@ -1,0 +1,10 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+# So the frontend can call /api/tickets etc. and Netlify routes it
+# to the bundled Express app at netlify/functions/api.js
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200

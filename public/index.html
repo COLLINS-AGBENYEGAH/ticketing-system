@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" href="images/Adobe Express - file.png">
+<title> UGC Help Desk | Student Portal</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="brand"><span class="dot"></span> University of Gold Coast Help Desk</div>
+  <div class="nav-links">
+    <a href="index.html">Student Portal</a>
+    <a href="login.html">Staff Login</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="hero">
+    <h1>Need help? Submit a ticket.</h1>
+    <p>Whatever the issue — academic, IT, facilities, hostel, fees, or anything else — tell us what's wrong and the right department will get back to you. Track your ticket anytime using your ticket code.</p>
+  </div>
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="submit">Submit a Ticket</button>
+    <button class="tab-btn" data-tab="track">Track My Ticket</button>
+  </div>
+
+  <!-- SUBMIT TAB -->
+  <div id="submit-panel" class="card">
+    <form id="ticket-form">
+      <div class="form-grid">
+        <div>
+          <label for="student_name">Full Name</label>
+          <input type="text" id="student_name" required placeholder="e.g. Kwame Mensah" />
+        </div>
+        <div>
+          <label for="student_id">Student ID</label>
+          <input type="text" id="student_id" required placeholder="e.g. AIT/2023/0456" />
+        </div>
+        <div>
+          <label for="email">Email (optional)</label>
+          <input type="email" id="email" placeholder="you@example.com" />
+        </div>
+        <div>
+          <label for="category">Issue Category</label>
+          <select id="category" required>
+            <option value="">Select category</option>
+            <option value="Academic/Registrar">Academic/Registrar</option>
+            <option value="IT/Computer Lab">IT/Computer Lab</option>
+            <option value="Facilities/Maintenance">Facilities/Maintenance</option>
+            <option value="Hostel/Accommodation">Hostel/Accommodation</option>
+            <option value="Finance/Fees">Finance/Fees</option>
+            <option value="Administration">Administration</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="full">
+          <label for="priority">Priority</label>
+          <select id="priority">
+            <option value="Low">Low</option>
+            <option value="Medium" selected>Medium</option>
+            <option value="High">High</option>
+            <option value="Urgent">Urgent</option>
+          </select>
+        </div>
+        <div class="full">
+          <label for="description">Describe the issue</label>
+          <textarea id="description" required placeholder="What happened? What have you already tried?"></textarea>
+        </div>
+      </div>
+      <div style="margin-top: 20px;">
+        <button type="submit" class="btn btn-primary">Submit Ticket</button>
+      </div>
+      <div id="submit-msg"></div>
+    </form>
+  </div>
+
+  <!-- TRACK TAB -->
+  <div id="track-panel" class="card hidden">
+    <label for="track-code">Enter your ticket code</label>
+    <div style="display:flex; gap:10px;">
+      <input type="text" id="track-code" placeholder="e.g. TCK-8X4K2P" style="text-transform:uppercase;" />
+      <button id="track-btn" class="btn btn-gold" style="white-space:nowrap;">Check Status</button>
+    </div>
+    <div id="track-result" style="margin-top:20px;"></div>
+  </div>
+
+  <p class="footer-note">UGC Help Desk &mdash; Student Ticketing System</p>
+</div>
+
+<script src="js/student.js"></script>
+</body>
+</html>
