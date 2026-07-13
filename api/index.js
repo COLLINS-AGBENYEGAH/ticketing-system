@@ -135,7 +135,7 @@ Support Team`;
       <p>Our support team will review it and update you shortly.</p>
 
       <p>
-        <a href="${trackUrl}">
+        <a href="https://ticketing-system-three-omega.vercel.app/index.html">
           Track Ticket
         </a>
       </p>
@@ -269,7 +269,7 @@ app.patch("/api/tickets/:id", requireAuth, async (req, res) => {
 
     const baseUrl = process.env.BASE_URL || `http://localhost:${process.env.PORT || 3000}`;
     const trackUrl = `${baseUrl}/api/tickets/track/${existing.ticket_code}`;
-    const text = `Hello ${existing.student_name},\n\n${statusMessage}\n\nYou can track your ticket in the portal using code: ${existing.ticket_code}.\n\n${trackUrl}\n\nThank you,\nSupport Team`;
+    const text = `Hello ${existing.student_name},\n\n${statusMessage}\n\nYou can track your ticket in the portal using code: ${existing.ticket_code}.\n\nhttps://ticketing-system-three-omega.vercel.app/index.html\n\nThank you,\nSupport Team`;
     const html = `<p>Hello ${existing.student_name},</p>
 <p>${statusMessage}</p>
 <p><a href="${trackUrl}">View and track your ticket</a></p>
