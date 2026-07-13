@@ -272,7 +272,7 @@ app.patch("/api/tickets/:id", requireAuth, async (req, res) => {
     const text = `Hello ${existing.student_name},\n\n${statusMessage}\n\nYou can track your ticket in the portal using code: ${existing.ticket_code}.\n\nhttps://ticketing-system-three-omega.vercel.app/index.html\n\nThank you,\nSupport Team`;
     const html = `<p>Hello ${existing.student_name},</p>
 <p>${statusMessage}</p>
-<p><a href="">View and track your ticket</a></p>
+<p><a href="https://ticketing-system-three-omega.vercel.app/index.html">View and track your ticket</a></p>
 <p>Thank you,<br>Support Team</p>`;
 
     sendEmail(existing.email, `Ticket update: ${existing.ticket_code}`, text, html).catch((err) => {
@@ -316,7 +316,7 @@ app.post("/api/tickets/:id/comments", requireAuth, async (req, res) => {
     const html = `<p>Hello ${ticket.student_name},</p>
 <p>Your ticket <strong>${ticket.ticket_code}</strong> has a new response from <strong>${managerName}</strong>:</p>
 <p>${message.replace(/\n/g, '<br>')}</p>
-<p><a href="${trackUrl}">View the ticket and replies</a></p>
+<p><a href="https://ticketing-system-three-omega.vercel.app/index.html">View the ticket and replies</a></p>
 <p>Thank you,<br>Support Team</p>`;
 
     sendEmail(ticket.email, `IT response received: ${ticket.ticket_code}`, text, html).catch((err) => {
